@@ -64,7 +64,9 @@ def main():
                 if push_code == 0:
                     targetfilename = os.path.basename(targetfile)
                     view_code, view_output, view_error = execute_command("adb shell am start -a android.intent.action.VIEW -d file:///storage/emulated/0/" + targetfilename + " -t video/*")
-                    if view_code != 0:
+                    if view_code == 0:
+                        print(Fore.YELLOW + Style.BRIGHT + " [+] Sent successfully!")
+                    else:
                         print(Fore.YELLOW + Style.BRIGHT + " [-] error launching video viewer")
                         print(Fore.YELLOW + Style.BRIGHT + " [!] ADB output:", view_error.strip())
                 else:
