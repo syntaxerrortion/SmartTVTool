@@ -39,7 +39,7 @@ def scan_and_select_device():
 def main():
     os.system("clear")
     print(Fore.YELLOW + Style.BRIGHT + figlet_format("  Smart TV Tool"))
-    print(Fore.YELLOW + Style.BRIGHT + """                                                          Creating Syntax
+    print(Fore.YELLOW + Style.BRIGHT + """                                                        Created by Syntax
 
       SmartTV hacking screen for need port(5555) open!
 
