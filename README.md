@@ -15,24 +15,6 @@ Bu araç, yerel ağınızdaki Smart TV'leri veya Android TV cihazlarını tespit
 3. **Dosya Yükleme ve Video Oynatma**: Kullanıcının belirttiği bir video dosyasını cihaza yükler ve cihazda bu videoyu oynatır.
 
 
-#### Kullanım Adımları:
-
-1. **Aracın Başlatılması**:
-   - Aracı çalıştırdığınızda, terminal ekranı temizlenir ve ana menü sarı renkte görüntülenir. Kullanıcıya iki seçenek sunulur: "Scan & Execute" ve "Exit".
-   - `Scan & Execute` seçeneği, ağdaki cihazları tarar ve belirli komutları uygular.
-   - `Exit` seçeneği, aracı sonlandırır.
-
-2. **Ağ Taraması ve Cihaz Bağlantısı**:
-   - Kullanıcı "Scan & Execute" seçeneğini seçtiğinde, araç yerel ağdaki cihazları tarar ve 5555 numaralı portu açık olan cihazları listeler.
-   - Kullanıcı, listelenen cihazlardan birini seçer ve araç bu cihaza ADB üzerinden bağlanmaya çalışır.
-   - Bağlantı başarılı olursa, kullanıcıya cihaza yüklenecek bir video dosyasını belirtmesi istenir.
-
-3. **Dosya Yükleme ve Video Oynatma**:
-   - Kullanıcı video dosyasını belirttikten sonra, araç bu dosyayı cihaza yükler.
-   - Dosya yüklendikten sonra, araç video dosyasını cihaza oynatmak için gerekli komutu gönderir.
-   - Eğer video oynatılamazsa, hata mesajı görüntülenir.
-
-
 ### Önemli Noktalar:
 - **ADB (Android Debug Bridge)**: Bu araç, ADB kullanarak cihazlara bağlanır ve komutlar gönderir. ADB'nin cihazda ve bilgisayarda doğru şekilde kurulu ve çalışır durumda olduğundan emin olunmalıdır.
 - **Nmap**: Ağ taraması için `nmap` kullanılır. `nmap`'in bilgisayarınızda kurulu ve PATH değişkenine ekli olduğundan emin olunmalıdır.
