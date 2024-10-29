@@ -1,3 +1,6 @@
+![](https://github.com/syntaxerrortion/SmartTVTool/blob/main/Screenshot_20241029_215955.png)
+
+
 # SmartTVTool
 Smart TV üzerinde bulunan adb portunu kullanarak bu araç ile istediğiniz (.mp4) formatını akıllı TV’nizde oynatabilir ve aynı zamanda kapatabilirsiniz.
 
