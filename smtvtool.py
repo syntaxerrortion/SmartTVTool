@@ -63,7 +63,7 @@ def main():
                 print(f"{Fore.YELLOW}{Style.BRIGHT} [*] Connecting..")
                 print(f"{Fore.YELLOW}{Style.BRIGHT} [+] Connected!")
 
-                targetfile = input(f"{Fore.YELLOW}{Style.BRIGHT} [*] upload mp4 file: ")
+                targetfile = input(f"{Fore.YELLOW}{Style.BRIGHT} [*] execute mp4 file: ")
                 push_code, push_output, push_error = execute_command(["adb", "push", targetfile, "/storage/emulated/0/"])
                 if push_code == 0:
                     targetfilename = os.path.basename(targetfile)
@@ -88,7 +88,7 @@ def main():
                 print(f"{Fore.YELLOW}{Style.BRIGHT} [*] Connecting..")
                 print(f"{Fore.YELLOW}{Style.BRIGHT} [+] Connected!")
 
-                targetfile = input(f"{Fore.YELLOW}{Style.BRIGHT} [*] upload mp4 file: ")
+                targetfile = input(f"{Fore.YELLOW}{Style.BRIGHT} [*] execute mp4 file: ")
                 push_code, push_output, push_error = execute_command(["adb", "push", targetfile, "/storage/emulated/0/"])
                 if push_code == 0:
                     targetfilename = os.path.basename(targetfile)
