@@ -21,7 +21,7 @@ apt install adb -y
 
 apt install ffmpeg wget git gcc make meson -y
 
-echo "Scrcpy kuruluyor..."
+echo "[*] Scrcpy installing..."
 git clone https://github.com/Genymobile/scrcpy.git
 cd scrcpy
 meson build
