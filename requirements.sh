@@ -19,4 +19,16 @@ apt install nmap -y
 
 apt install adb -y
 
+pkg install ffmpeg wget git gcc make meson -y
+
+echo "Scrcpy kuruluyor..."
+git clone https://github.com/Genymobile/scrcpy.git
+cd scrcpy
+meson build
+cd build
+ninja
+sudo ninja install
+cd ../..
+
+
 echo "[+] Requirements done!"
