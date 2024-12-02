@@ -1,4 +1,4 @@
-![](https://github.com/syntaxerrortion/SmartTVTool/blob/main/Screenshot_20241029_215955.png)
+![](https://github.com/syntaxerrortion/SmartTVTool/blob/main/Screenshot_20241202_082129.png)
 
 
 # SmartTVTool
